@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.projects-slider');
-    
-    // Interação do mouse com a barra de rolagem horizontal
-    slider.addEventListener('wheel', (event) => {
-        if (event.deltaY !== 0) {
-            event.preventDefault();
-            slider.scrollLeft += event.deltaY;
-        }
+    const sliders = document.querySelectorAll('.projects-slider');
+
+    sliders.forEach(slider => {
+        slider.addEventListener('wheel', (event) => {
+            if (event.deltaY !== 0) {
+                event.preventDefault();
+                slider.scrollLeft += event.deltaY;
+            }
+        });
     });
 
 

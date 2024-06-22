@@ -55,7 +55,7 @@ header p {
     --dot-max-size: 8px;
     --dot-opacity: 0.5;
     --dot-count: 100; /* Número de bolinhas */
-    --animation-duration: 20s; /* Duração base da animação */
+    --animation-duration: 20s;
 }
 
 .background-dots {
@@ -84,7 +84,7 @@ header p {
         transform: translate(0, 0);
     }
     to {
-        transform: translate(var(--move-x), var(--move-y)); /* Movimenta as bolinhas */
+        transform: translate(var(--move-x), var(--move-y));
     }
 }
 
@@ -226,7 +226,6 @@ h2:after {
   }
   
 
-/* Estilos para WebKit (Chrome, Safari, Opera) */
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -252,6 +251,7 @@ h2:after {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 20px;
+    font-size: 1em;
 }
 
 .projects-slider::-webkit-scrollbar {
@@ -281,13 +281,14 @@ h2:after {
 
 .projects-slider .project {
     position: relative;
+    max-width: 260px;
 }
 
 .project img {
     width: 100%;
-    height: auto; /* Mantém a proporção da imagem */
+    height: auto;
     max-width: 280px;
-    object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
+    object-fit: cover;
     border-radius: 8px;
 }
 
@@ -311,13 +312,13 @@ h2:after {
 
 .project-link {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 10px;
     color: #ffffff;
     background-color: #3cb371;
-    color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    left: 20px;
 }
 
 .projects-slider .project-link {
@@ -326,7 +327,20 @@ h2:after {
     margin-bottom: 20px;
 }
 
-.project-link:hover {
+.project-link-deploy {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    padding: 10px 5px;
+    right: 20px;
+    color: #ffffff;
+    background-color: #3cb371;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project-link:hover, .project-link-deploy:hover {
     background-color: #2b8152;
 }
 
@@ -457,7 +471,7 @@ footer p {
 
 
 .container.init {
-    min-height: 100vh; /* Garante que o container tenha pelo menos a altura da viewport */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -545,6 +559,29 @@ footer p {
 
     .social-links {
         justify-content: center;
+    }
+}
+
+
+@media (max-width: 412px) {
+    #personal-quote .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-pic-quote {
+        margin: 0 auto 10px;
+    }
+
+    .quote-text {
+        width: auto;
+        margin: 0 10px;
+    }
+
+    blockquote {
+        font-size: 1.2rem;
     }
 }
 
