@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
         langElements.forEach(element => {
             const ptText = element.getAttribute('data-lang-pt');
             const enText = element.getAttribute('data-lang-en');
-            element.textContent = lang === 'pt-br' ? ptText : enText;
+            const text = lang === 'pt-br' ? ptText : enText;
+            element.innerHTML = text.replace(/\\n/g, '<br>');
         });
+    
 
         // Atualizar o estilo dos links de idioma
         const ptLink = document.querySelector('.pt-br-link');
